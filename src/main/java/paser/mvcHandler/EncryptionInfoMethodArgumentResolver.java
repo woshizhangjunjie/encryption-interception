@@ -50,7 +50,7 @@ public class EncryptionInfoMethodArgumentResolver extends AbstractMessageConvert
                 field.setAccessible(true);
                 //Encryption result
                 try {
-                    String  result = algorithmPaser.options(type, String.valueOf(field.get(obj)), annotation.salt(), annotation.num());
+                    String result = algorithmPaser.options(type, String.valueOf(field.get(obj)), annotation.salt(), annotation.num());
                     Method declaredMethod = parameterType.getDeclaredMethod("set" + String.valueOf(uppercase), String.class);
                     declaredMethod.invoke(obj, result);
                 } catch (IllegalAccessException e) {

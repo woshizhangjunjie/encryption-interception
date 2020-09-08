@@ -15,8 +15,12 @@ public class Application {
         SpringApplication.run(Application.class, args);
     }
 
+    /**
+     * 1.0.0 test
+     * @param mytest
+     */
     @GetMapping("/test")
-    public void showBrokerage(@RequestBody Mytest mytest) {
+    public void test(@RequestBody Mytest mytest) {
         System.out.println(mytest);
         Mytest mytest1 = new Mytest();
         mytest1.setMima("b7cba872952fb362e6912722eeaf1c5f");
