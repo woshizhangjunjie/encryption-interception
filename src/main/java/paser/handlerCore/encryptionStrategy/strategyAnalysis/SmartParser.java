@@ -9,7 +9,7 @@ import paser.handlerCore.encryptionStrategy.strategyAnalysis.context.SmartContex
 import java.util.ArrayList;
 import java.util.List;
 
-public class SmartPaser {
+public class SmartParser {
 
     private static List<SmartContext> algorithmContexts = new ArrayList<>();
 

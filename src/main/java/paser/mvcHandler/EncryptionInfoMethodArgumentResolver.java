@@ -10,7 +10,7 @@ import org.springframework.web.context.request.NativeWebRequest;
 import org.springframework.web.method.support.ModelAndViewContainer;
 import org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodArgumentResolver;
 import paser.handlerCore.annotation.InParamEncryption;
-import paser.handlerCore.encryptionStrategy.strategyAnalysis.SmartPaser;
+import paser.handlerCore.encryptionStrategy.strategyAnalysis.SmartParser;
 import paser.handlerCore.encryptionStrategy.strategyAnalysis.SmartType;
 
 import java.lang.reflect.Field;
@@ -46,11 +46,11 @@ public class EncryptionInfoMethodArgumentResolver extends AbstractMessageConvert
                 //capitalize the first letter
                 uppercase[0] -= 32;
                 SmartType type = annotation.type();
-                SmartPaser algorithmPaser = new SmartPaser();
+                SmartParser algorithmParser = new SmartParser();
                 field.setAccessible(true);
                 //Encryption result
                 try {
-                    String result = algorithmPaser.options(type, String.valueOf(field.get(obj)), annotation.salt(), annotation.num());
+                    String result = algorithmParser.options(type, String.valueOf(field.get(obj)), annotation.salt(), annotation.num());
                     Method declaredMethod = parameterType.getDeclaredMethod("set" + String.valueOf(uppercase), String.class);
                     declaredMethod.invoke(obj, result);
                 } catch (IllegalAccessException e) {

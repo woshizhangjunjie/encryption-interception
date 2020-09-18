@@ -2,7 +2,7 @@ package paser.util;
 
 import org.springframework.util.Assert;
 import paser.handlerCore.annotation.InParamEncryption;
-import paser.handlerCore.encryptionStrategy.strategyAnalysis.SmartPaser;
+import paser.handlerCore.encryptionStrategy.strategyAnalysis.SmartParser;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -52,8 +52,8 @@ public class VerifyUtil<T> {
                     }
                     if (!isIntercept) {
                         InParamEncryption annotation = field.getAnnotation(InParamEncryption.class);
-                        SmartPaser smartPaser = new SmartPaser();
-                        String options = smartPaser.options(annotation.type(), String.valueOf(invoke1), annotation.salt(), annotation.num());
+                        SmartParser smartParser = new SmartParser();
+                        String options = smartParser.options(annotation.type(), String.valueOf(invoke1), annotation.salt(), annotation.num());
                         if (!options.equalsIgnoreCase(String.valueOf(invoke2))) {
                             return false;
                         }
