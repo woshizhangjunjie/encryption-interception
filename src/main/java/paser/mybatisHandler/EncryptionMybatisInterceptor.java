@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.annotation.AnnotationUtils;
 import org.springframework.stereotype.Component;
 import paser.handlerCore.annotation.MybatisEncryption;
-import paser.handlerCore.annotation.MybatisFieldEncryption;
 import paser.util.EncryptUtil;
 
 import java.lang.reflect.Field;
@@ -44,7 +43,6 @@ public class EncryptionMybatisInterceptor implements Interceptor {
             }
         }
         return invocation.proceed();
-
     }
 
     @Override
