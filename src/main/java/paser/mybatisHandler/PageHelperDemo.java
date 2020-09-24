@@ -1,4 +1,4 @@
-package paser;
+package paser.mybatisHandler;
 
 //@Configuration
 //@AutoConfigureAfter(PageHelperAutoConfiguration.class)
