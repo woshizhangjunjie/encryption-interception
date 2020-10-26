@@ -8,6 +8,9 @@ import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
+/**
+ * @author zhangjunjie
+ */
 public class VerifyUtil<T> {
 
     private T now;
